@@ -1,24 +1,9 @@
 # app_todo
 
-## Project setup
-```
-yarn install
-```
+## Descrição
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+A aplicação web, utilizando Vue JS, esta sendo desenvolvida com base no curso presente no canal do YouTube: Switch Case. Com este sendo primeiro projeto em Vue, visando trazer aprendizado sobre a linguagem, esta bem básico e sofrerá modificações futuras.
 
-### Compiles and minifies for production
-```
-yarn build
-```
+### Link de acesso a Playlist com aulas
 
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Aulas: https://www.youtube.com/playlist?list=PLp7Agl_Dsq-xkB8iOTb3yTrfYpH6rDQL8
