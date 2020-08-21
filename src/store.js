@@ -27,6 +27,10 @@ const actions = {
   toggleTodo({ commit }, todo) {
     commit("toggleTodo", todo);
   },
+
+  removeTodo({ commit }, todo) {
+    commit("removeTodo", todo);
+  },
 };
 const getters = {};
 const mutations = {
@@ -45,6 +49,10 @@ const mutations = {
       const checked = !state.todos[index].checked;
       Vue.set(state.todos, index, { ...state.todos[index], checked });
     }
+  },
+
+  removeTodo(state, payload) {
+    state.todos = state.todos.filter(todo=> todo.id !== payload.id);
   },
 };
 

@@ -34,7 +34,7 @@ export default {
   methods: {
     async addTodo(todo) {
       // Verificando se campo não esta vazio
-      if (todo.description == "" || !todo) {
+      if (todo.description === "") {
         alert("Insira algum conteudo na sua tarefa!");
       } else {
         // Utilizando função addTodo da Store
@@ -48,10 +48,7 @@ export default {
     },
 
     removeTodo(todo) {
-      const index = this.todos.findIndex((item) => item.id === todo.id);
-      if (index > -1) {
-        this.$delete(this.todos, index);
-      }
+      this.$store.dispatch("removeTodo", todo);
     },
   },
 };
