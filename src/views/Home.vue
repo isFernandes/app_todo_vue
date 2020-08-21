@@ -15,6 +15,7 @@
 <script>
 //
 import Todo from "@/components/List";
+import { mapState } from "vuex";
 export default {
   name: "App",
   // setando components
@@ -24,12 +25,7 @@ export default {
   },
   computed: {
     // Ele mapeia as variaveis da store, simplificando uso
-    todos() {
-      return this.$store.state.todos;
-    },
-    loading() {
-      return this.$store.state.loading;
-    },
+    ...mapState(["todos", "loading"]),
   },
   methods: {
     async addTodo(todo) {

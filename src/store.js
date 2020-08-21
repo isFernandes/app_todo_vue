@@ -20,7 +20,7 @@ const actions = {
         commit("addTodo", todo);
         commit("setLoading", false);
         resolve(todo);
-      }, 500);
+      }, 580);
     });
   },
 
@@ -52,7 +52,10 @@ const mutations = {
   },
 
   removeTodo(state, payload) {
+      
+    console.log(state.todos);
     state.todos = state.todos.filter(todo=> todo.id !== payload.id);
+    console.log(state.todos);
   },
 };
 
