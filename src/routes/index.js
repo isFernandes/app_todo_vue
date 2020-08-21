@@ -1,5 +1,6 @@
 import Vue from 'vue';
-import Home from '@/views/Home'
+import Home from '@/views/Home';
+import Kanban from '@/views/kanban/Kanban';
 import VueRouter from 'vue-router';
 
 Vue.use(VueRouter);
@@ -10,6 +11,11 @@ const routes = [
         name: 'Home',
         path: '/',
         component: Home,
+    },
+    {
+        name: 'Kanban',
+        path: '/kanban',
+        component: Kanban,
     }
 ];
 
