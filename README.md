@@ -25,5 +25,6 @@ Ele utiliza o mesmo projeto de Todos, aplicando um painel Kanban, rotas e Vuex p
 ### Link de acesso a Playlist com aulas
 
 Curso Iniciante: [YouTube](https://www.youtube.com/playlist?list=PLp7Agl_Dsq-xkB8iOTb3yTrfYpH6rDQL8);
+
 Curso Intermediário: [YouTube](https://www.youtube.com/watch?v=TLK-99unfPA&list=PLp7Agl_Dsq-xqtT7jn6PgzwC2jqdMajP2);
 
