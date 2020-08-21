@@ -1,10 +1,10 @@
 <template>
-  <div class="containerStyle container grid-xs py-2 ">
+  <div class="containerStyle container grid-xs py-2">
     <img class="img-responsive logo" alt="Vue logo" src="@/assets/task.png" />
     <form @submit.prevent="addTodo(todo)" class="forms">
       <div class="input-group">
         <input type="text" v-model="todo.description" class="form-input" placeholder="Nova tarefa" />
-        <button class="btn btn-primary input-group-btn">Adicionar</button>
+        <button class="btn btn-primary input-group-btn" :class="{loading}">Adicionar</button>
       </div>
     </form>
     <Todo v-for="t in todos" :key="t.id" @toogle="toogleTodo" @remove="removeTodo" :todo="t" />
@@ -20,23 +20,33 @@ export default {
   // setando components
   components: { Todo },
   data() {
-    return { todos: [], todo: { checked: false } };
+    return { todo: { description: "", checked: false } };
+  },
+  computed: {
+    // Ele mapeia as variaveis da store, simplificando uso
+    todos() {
+      return this.$store.state.todos;
+    },
+    loading() {
+      return this.$store.state.loading;
+    },
   },
   methods: {
-    addTodo(todo) {
-      todo.id = Date.now();
-      this.todos.push(todo);
-
-      // Passando esse obj todo fica clean, e salva novos dados
-      this.todo = { checked: false };
-    },
-    toogleTodo(todo) {
-      const index = this.todos.findIndex((item) => item.id === todo.id);
-      if (index > -1) {
-        const checked = !this.todos[index].checked;
-        this.$set(this.todos, index, { ...this.todos[index], checked });
+    async addTodo(todo) {
+      // Verificando se campo não esta vazio
+      if (todo.description == "" || !todo) {
+        alert("Insira algum conteudo na sua tarefa!");
+      } else {
+        // Utilizando função addTodo da Store
+        await this.$store.dispatch("addTodo", todo);
+        this.todo = { checked: false };
       }
     },
+
+    toogleTodo(todo) {
+      this.$store.dispatch("toggleTodo", todo);
+    },
+
     removeTodo(todo) {
       const index = this.todos.findIndex((item) => item.id === todo.id);
       if (index > -1) {
@@ -57,7 +67,7 @@ export default {
   margin: 20px;
 }
 
-.containerStyle{
+.containerStyle {
   margin-top: 10%;
 }
 </style>
