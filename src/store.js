@@ -52,10 +52,7 @@ const mutations = {
   },
 
   removeTodo(state, payload) {
-      
-    console.log(state.todos);
     state.todos = state.todos.filter(todo=> todo.id !== payload.id);
-    console.log(state.todos);
   },
 };
 
