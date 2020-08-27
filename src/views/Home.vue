@@ -32,27 +32,15 @@ export default {
     ...mapActions(["addTodo","toggleTodo","removeTodo"]),
 
     async add(todo){
-      await this.addTodo(todo);
-      this.todo = {checked: false}; 
+      // Verificando se campo não esta vazio
+      if (todo.description === "") {
+         alert("Insira algum conteudo na sua tarefa!");
+       } else {
+         // Utilizando função addTodo da Store
+          await this.addTodo(todo);   
+         this.todo = { checked: false };
+       } 
     },
-    // async addTodo(todo) {
-    //   // Verificando se campo não esta vazio
-    //   if (todo.description === "") {
-    //     alert("Insira algum conteudo na sua tarefa!");
-    //   } else {
-    //     // Utilizando função addTodo da Store
-    //     await this.$store.dispatch("addTodo", todo);
-    //     this.todo = { checked: false };
-    //   }
-    // },
-
-    // toggleTodo(todo) {
-    //   this.$store.dispatch("toggleTodo", todo);
-    // },
-
-    // removeTodo(todo) {
-    //   this.$store.dispatch("removeTodo", todo);
-    // },
   },
 };
 </script>

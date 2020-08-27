@@ -1,19 +1,19 @@
 <template>
-  <div class="tile flex-centered" :class="{checked: todo.checked}">
+  <div class="tile" :class="{checked: todo.checked}">
     <div class="tile-icon">
-      <i class="icon" :class="todo.checked ? 'icon-check' : 'icon-time'"></i>
+      <i class="icon icon-2x" :class="todo.checked ? 'icon-check' : 'icon-time'"></i>
     </div>
     <div class="tile-content">
       <div class="tile-subtitle">{{todo.description}}</div>
-    </div>
-    <div class="tile-action">
-      <button @click="$emit('toogle', todo)" class="btn btn-link">
-        <span v-if="todo.checked">Desmarcar</span>
-        <span v-else>Concluido</span>
-      </button>
-      <button class="btn btn-link">
-        <span @click="$emit('remove', todo)" class="text-error">Remover</span>
-      </button>
+      <div>
+        <button @click="$emit('toogle', todo)" class="btn btn-link">
+          <span v-if="todo.checked">Desmarcar</span>
+          <span v-else>Concluido</span>
+        </button>
+        <button class="btn btn-link">
+          <span @click="$emit('remove', todo)" class="text-error">Remover</span>
+        </button>
+      </div>
     </div>
   </div>
 </template>
@@ -31,5 +31,11 @@ export default {
 .checked {
   text-decoration: line-through;
   color: lightgray;
+}
+
+.tile {
+  margin-top: 10px;
+  padding: 1rem;
+  box-shadow: 0 0.25rem 1rem rgba(48, 55, 66, 0.15);
 }
 </style>

@@ -32,7 +32,14 @@ const actions = {
     commit("removeTodo", todo);
   },
 };
-const getters = {};
+const getters = {
+  uncheckeds(state) {
+    return state.todos.filter((todo) => todo.checked === false);
+  },
+  checkeds(state){
+    return state.todos.filter((todo) => todo.checked === true);
+  }
+};
 const mutations = {
   // recebe o estado atual e o payload que é o estado atualizado para alteracao
   addTodo(state, payload) {
@@ -52,7 +59,7 @@ const mutations = {
   },
 
   removeTodo(state, payload) {
-    state.todos = state.todos.filter(todo=> todo.id !== payload.id);
+    state.todos = state.todos.filter((todo) => todo.id !== payload.id);
   },
 };
 
