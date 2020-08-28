@@ -1,7 +1,7 @@
 <template>
   <div class="container-board">
     <div class="columns">
-      <div class="column col-4">
+      <div id="todo" class="column col-4">
         <div class="panel">
           <div class="panel-header">
             <div class="panel-title">A fazer</div>
@@ -16,11 +16,11 @@
             />
           </div>
           <div class="panel-footer">
-            <!-- buttons or inputs -->
+            <button class="btn btn-link float-right">Concluir tudo</button>
           </div>
         </div>
       </div>
-      <div class="column col-4">
+      <div id="done" class="column col-4">
         <div class="panel">
           <div class="panel-header">
             <div class="panel-title">Feito</div>
@@ -70,5 +70,13 @@ export default {
   height: 100%;
   border: 0;
   box-shadow: 0 0.25rem 1rem rgba(48, 55, 66, 0.15);
+}
+
+#todo{
+  margin: 0 0 0 10%;
+}
+
+#done{
+  margin: 0 0 0 15%;
 }
 </style>

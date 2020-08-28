@@ -31,14 +31,19 @@ const actions = {
   removeTodo({ commit }, todo) {
     commit("removeTodo", todo);
   },
+  checkAllTodo({ commit }) {
+    commit("checkAllTodo")
+  },
+  uncheckAllTodo({ commit }) {
+    commit("uncheckAllTodo")},
 };
 const getters = {
   uncheckeds(state) {
     return state.todos.filter((todo) => todo.checked === false);
   },
-  checkeds(state){
+  checkeds(state) {
     return state.todos.filter((todo) => todo.checked === true);
-  }
+  },
 };
 const mutations = {
   // recebe o estado atual e o payload que é o estado atualizado para alteracao
@@ -61,6 +66,9 @@ const mutations = {
   removeTodo(state, payload) {
     state.todos = state.todos.filter((todo) => todo.id !== payload.id);
   },
+
+  checkAllTodo() {},
+  uncheckAllTodo() {},
 };
 
 const store = new Vuex.Store({ state, mutations, actions, getters });
