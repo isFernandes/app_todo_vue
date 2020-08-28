@@ -28,3 +28,11 @@ Curso Iniciante: [YouTube](https://www.youtube.com/playlist?list=PLp7Agl_Dsq-xkB
 
 Curso Intermediário: [YouTube](https://www.youtube.com/playlist?list=PLp7Agl_Dsq-xqtT7jn6PgzwC2jqdMajP2);
 
+### Features 
+Adicionado ao projeto uma versão mais escura que a versão original. 
+- Cor de background: #3b4351;
+- Cor da fonte dos botões: <code> text-success </code> do próprio spectre.css
+- Cor de fonte das descrições não concluidas: <code> rgb(240, 238, 238); </code>
+- Cor de fonte das descrições concluidas: <code> rgba(63, 56, 56, 0.527); </code>
+- Cor do box-shadow: <code> rgba(98, 108, 124, 0.15); </code>
+
