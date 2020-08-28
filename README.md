@@ -36,3 +36,5 @@ Adicionado ao projeto uma versão mais escura que a versão original.
 - Cor de fonte das descrições concluidas: <code> rgba(63, 56, 56, 0.527); </code>
 - Cor do box-shadow: <code> rgba(98, 108, 124, 0.15); </code>
 
+![image](https://user-images.githubusercontent.com/41745075/91520853-b96b2280-e8cc-11ea-98e4-0e70762c1c49.png)
+![image](https://user-images.githubusercontent.com/41745075/91520947-00f1ae80-e8cd-11ea-9db4-8abfeb29e460.png)
