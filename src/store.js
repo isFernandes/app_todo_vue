@@ -31,19 +31,38 @@ const actions = {
   removeTodo({ commit }, todo) {
     commit("removeTodo", todo);
   },
-  checkAllTodo({ commit }) {
-    commit("checkAllTodo")
+
+  checkAllTodo({ commit, state }) {
+    const uncheckedsIds = state.todos
+      .filter((todo) => !todo.checked)
+      .map((todo) => todo.id);
+    commit("toggleList", uncheckedsIds);
   },
-  uncheckAllTodo({ commit }) {
-    commit("uncheckAllTodo")},
+
+  uncheckAllTodo({ commit, state }) {
+    const checkedsIds = state.todos
+      .filter((todo) => todo.checked)
+      .map((todo) => todo.id);
+    commit("toggleList", checkedsIds);
+  },
+
+  removeAllTodo({ commit, state }) {
+    const checkedsIds = state.todos
+      .filter((todo) => todo.checked)
+      .map((todo) => todo.id);
+    commit("removeList", checkedsIds);
+  },
+
 };
 const getters = {
   uncheckeds(state) {
     return state.todos.filter((todo) => todo.checked === false);
   },
+
   checkeds(state) {
     return state.todos.filter((todo) => todo.checked === true);
   },
+
 };
 const mutations = {
   // recebe o estado atual e o payload que é o estado atualizado para alteracao
@@ -67,8 +86,20 @@ const mutations = {
     state.todos = state.todos.filter((todo) => todo.id !== payload.id);
   },
 
-  checkAllTodo() {},
-  uncheckAllTodo() {},
+  toggleList(state, payload) {
+    const todos = state.todos.map((todo) => {
+      return payload.includes(todo.id)
+        ? { ...todo, checked: !todo.checked }
+        : todo;
+    });
+    state.todos = todos;
+  },
+
+  removeList(state, payload) {
+    const todos = state.todos.filter(todo=>{!payload.includes(todo.id)});
+    state.todos = todos;
+  },
+
 };
 
 const store = new Vuex.Store({ state, mutations, actions, getters });
