@@ -19,7 +19,7 @@
             <button
               v-if="uncheckeds.length > 0"
               @click="checkAllTodo"
-              class="btn btn-link float-right"
+              class="text-success btn btn-link float-right"
             >Concluir tudo</button>
           </div>
         </div>
@@ -40,7 +40,7 @@
           </div>
           <div class="panel-footer">
             <button v-if="checkeds.length > 0" @click="removeAllTodo" class="btn-link btn text-error">Remover tudo</button>
-            <button v-if="checkeds.length > 0" @click="uncheckAllTodo" class="btn btn-link float-right">Desmarcar tudo</button>
+            <button v-if="checkeds.length > 0" @click="uncheckAllTodo" class="text-success btn btn-link float-right">Desmarcar tudo</button>
           </div>
         </div>
       </div>

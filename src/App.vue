@@ -1,11 +1,11 @@
 <template>
-  <div class="fundoEstilizado">
+  <div class="forDarkTheme">
     <div id="app">
       <div class="container grid-lg">
         <header class="navbar">
           <section class="navbar-section">
-            <router-link to="/" class="btn btn-link">Home</router-link>
-            <router-link to="/kanban" class="btn btn-link">Kanban</router-link>
+            <router-link to="/" class="text-success btn btn-link">Home</router-link>
+            <router-link to="/kanban" class="text-success btn btn-link">Kanban</router-link>
           </section>
           <section class="navbar-center">
             <img class="img-responsive imgStyle" src="@/assets/To-Do.png" />
@@ -14,12 +14,12 @@
             <a
               target="about_blank"
               href="https://github.com/isFernandes/app_todo_vue"
-              class="btn btn-link"
+              class="text-success btn btn-link"
             >GitHub</a>
             <a
               target="about_blank"
               href="https://www.linkedin.com/in/iago-fernandes/"
-              class="btn btn-link"
+              class="text-success btn btn-link"
             >LinkedIn</a>
           </section>
         </header>
@@ -36,7 +36,7 @@
   margin: 0 auto;
 }
 
-.fundoEstilizado {
+.forDarkTheme {
   background: #3b4351;
   width: 100%;
   height: 100vh;

@@ -6,7 +6,7 @@
     <div class="tile-content">
       <div class="forDarkTheme tile-subtitle">{{todo.description}}</div>
       <div>
-        <button @click="$emit('toogle', todo)" class="btn btn-link">
+        <button @click="$emit('toogle', todo)" class="text-success btn btn-link">
           <span v-if="todo.checked">Desmarcar</span>
           <span v-else>Concluido</span>
         </button>
@@ -30,7 +30,7 @@ export default {
 <style scoped>
 .checked {
   text-decoration: line-through;
-  color: rgba(185, 185, 185, 0.664);
+  color: rgba(63, 56, 56, 0.527);
   opacity: 0.7;
 }
 
