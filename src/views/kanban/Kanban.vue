@@ -80,7 +80,7 @@ export default {
 .columns .column .panel {
   height: 100%;
   border: 0;
-  box-shadow: 0 0.25rem 1rem rgba(48, 55, 66, 0.15);
+  box-shadow: 0 0.25rem 1rem rgba(98, 108, 124, 0.15);
 }
 
 /* Espaçamento dos PANELS */
