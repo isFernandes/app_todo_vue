@@ -4,7 +4,7 @@
       <div id="todo" class="column col-4">
         <div class="panel">
           <div class="panel-header">
-            <div class="panel-title">A fazer</div>
+            <div class="forDarkTheme panel-title">A fazer</div>
           </div>
           <div class="panel-body">
             <Todo
@@ -27,7 +27,7 @@
       <div id="done" class="column col-4">
         <div class="panel">
           <div class="panel-header">
-            <div class="panel-title">Feito</div>
+            <div class="forDarkTheme panel-title">Feito</div>
           </div>
           <div class="panel-body">
             <Todo
@@ -81,6 +81,10 @@ export default {
   height: 100%;
   border: 0;
   box-shadow: 0 0.25rem 1rem rgba(98, 108, 124, 0.15);
+}
+
+.forDarkTheme{
+  color: rgb(240, 238, 238);
 }
 
 /* Espaçamento dos PANELS */
