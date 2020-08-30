@@ -13,4 +13,3 @@ new Vue({
   store
 }).$mount('#app')
 
-//testando commit com comentario
