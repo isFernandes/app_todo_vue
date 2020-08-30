@@ -12,3 +12,5 @@ new Vue({
   router,
   store
 }).$mount('#app')
+
+//testando commit com comentario
